@@ -13,8 +13,7 @@
             <span class="search-history-heading">SEARCH HISTORY</span>
         </div>
         <div class="search-section">
-            <input type="text" placeholder="Search" [(ngModel)]="listname"
-                (keyup)="searchListName($event.target.value)">
+            <input type="text" placeholder="Search" (keyup)="searchListName($event.target.value)">
         </div>
     </header>
     <section class="table-section">

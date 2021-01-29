@@ -12,7 +12,6 @@ export class ListComponent {
   showDescription = false;
   descriptionArr = null;
   selectedRowIndex = -1;
-  listname = "";
   originalData;
 
 
@@ -20,6 +19,10 @@ export class ListComponent {
     this.originalData = this.dataSource;
   }
 
+  /**
+   * show details for the selected row in the table
+   * @param elt 
+   */
   showDetails(elt) {
     this.descriptionArr = null;
     this.showDescription = true;
@@ -28,10 +31,18 @@ export class ListComponent {
     elt.selected = !elt.selected;
   }
 
+  /**
+   * 
+   * @param row highlights the row catching the event from the details cell(event bubbling)
+   */
   highlight(row) {
     this.selectedRowIndex = row.id;
   }
 
+  /**
+   * 
+   * @param e returns the filtered list based on serach text
+   */
   searchListName(e) {
     if (e.length > 0) {
       this.dataSource = this.dataSource.filter(data => {
